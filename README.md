@@ -12,7 +12,7 @@ FFStringFlyAnimation
 
 
 ## 使用方法：
-将文件夹ffanimation拖入工程即可。
+将子文件夹ffanimation（或uilabel+ffanimation.swift,ffanimation_basic.swift两个文件）拖入工程即可。
 
 ## example:
     let animation = FFStringAppear1by1Animation()
