@@ -7,7 +7,7 @@ FFStringAppear1by1Animation
 ![FFStringBackToOrderAnimation](https://raw.githubusercontent.com/lucyTheSlayer/FFAnimation/master/demo/2.gif)
 FFStringBackToOrderAnimation
 
-![FFStringFlyAnimation](https://raw.githubusercontent.com/lucyTheSlayer/FFAnimation/master/demo/1.gif)
+![FFStringFlyAnimation](https://raw.githubusercontent.com/lucyTheSlayer/FFAnimation/master/demo/3.gif)
 FFStringFlyAnimation
 
 
