@@ -16,7 +16,7 @@ extension UILabel{
     
     func ff_textBounds() -> CGRect?{
         guard let text = self.text as NSString? else {return nil}
-        return text.boundingRect(with: CGSize(width: self.frame.size.width, height: 0), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font:self.font], context: nil)
+        return text.boundingRect(with: CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font:self.font], context: nil)
     }
     
     func ff_textFrame() -> CGRect?{
@@ -44,8 +44,7 @@ extension UILabel{
         guard let text = self.text else {return []}
         //guard let textBounds = self.ff_textBounds() else {return []}
         let attStr = NSMutableAttributedString(string: text)
-        let myFont = CTFontCreateWithName(self.font.fontName as CFString, self.font.pointSize, nil)
-        attStr.addAttribute(NSAttributedStringKey.font, value: myFont, range: NSMakeRange(0, attStr.length))
+        attStr.addAttribute(NSAttributedStringKey.font, value: self.font, range: NSMakeRange(0, attStr.length))
         let frameSetter = CTFramesetterCreateWithAttributedString(attStr)
         let path = CGMutablePath()
         path.addRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
@@ -277,5 +276,5 @@ class FFStringBackToOrderAnimation : FFAnimation{
     }
     
     
-
+    
 }
