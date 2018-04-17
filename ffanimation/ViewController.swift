@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var label : UILabel!
 
+    @IBOutlet weak var testLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.borderWidth = 1
@@ -19,11 +20,11 @@ class ViewController: UIViewController {
         label = UILabel(frame: CGRect(x:10,y:10,width:self.view.frame.size.width - 20,height: self.view.frame.size.height - 20))
         //label.textAlignment = .center
         label.numberOfLines = 0
-        
-        label.text = """
-            苟利国家生死以，岂因祸福避趋之
-            垂死病中惊坐起，谈笑风生又一年
-        """
+        label.text = "正在呼叫。。。"
+//        label.text = """
+//            苟利国家生死以，岂因祸福避趋之
+//            垂死病中惊坐起，谈笑风生又一年
+//        """
 //        label.text = """
 //        上古诞生之初，三界本为一片混沌。而混沌本就已神奇无比，已经孕育出众多天神、真神乃至祖神，又因出身的缘故，他们也被尊称为混沌天神、混沌真神以及混沌祖神。
 //        天地所蕴含的道，分为十大天道、八十一大道、十万八千小道。十大祖神，都是生而就掌握了天道的存在，分别是生而领悟混沌之道的盘古，生而领悟生命之道的女娲，生而领悟毁灭之道的伏羲，生而领悟阴之天道的凤凰，生而领悟阳之天道的祖龙，至于其他五行天道，分别是火神祝融、水神共工、金神蓐收、木神句芒、土神垕土。
@@ -42,11 +43,13 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let animation = FFStringAppear1by1Animation()
-        animation.appearDuration = 0.1
+        animation.appearDuration = 0.2
  //       let animation = FFStringBackToOrderAnimation()
 //        let animation = FFStringFlyAnimation()
 //        animation.appearDuration = 0.1
-        label.ff_startAnimation(animation)
+        //label.ff_startAnimation(animation)
+        animation.bRepeat = true
+        testLabel.ff_startAnimation(animation)
     }
 
     override func didReceiveMemoryWarning() {

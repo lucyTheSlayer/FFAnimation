@@ -42,13 +42,13 @@ extension UILabel{
     
     func ff_lines() -> [String]{
         guard let text = self.text else {return []}
-        guard let textBounds = self.ff_textBounds() else {return []}
+        //guard let textBounds = self.ff_textBounds() else {return []}
         let attStr = NSMutableAttributedString(string: text)
         let myFont = CTFontCreateWithName(self.font.fontName as CFString, self.font.pointSize, nil)
         attStr.addAttribute(NSAttributedStringKey.font, value: myFont, range: NSMakeRange(0, attStr.length))
         let frameSetter = CTFramesetterCreateWithAttributedString(attStr)
         let path = CGMutablePath()
-        path.addRect(CGRect(x: 0, y: 0, width: textBounds.width, height: CGFloat.greatestFiniteMagnitude))
+        path.addRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
         let frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, nil);
         let lines = CTFrameGetLines(frame) as NSArray
         var linesArray : [String] = []
